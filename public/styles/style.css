@@ -1,4 +1,5 @@
 .square {
+  border: 1px solid steelblue;
   height: 50vh;
   display: flex;
   align-items: center;
