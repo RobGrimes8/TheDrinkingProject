@@ -1,0 +1,30 @@
+<%- include("partials/header")%>
+    <%- include("partials/navbar") %>
+        <div class="container">
+            <div class="row drinkRow">
+                <% drinks.forEach(function(drink){ %>
+                    <div class="col-3">
+                        <div class="card">
+                            <img style="height: 10rem;" src="<%= drink.image %>" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <div class="card-content">
+                                    <h5 class="card-title">
+                                        <%= drink.name %>
+                                    </h5>
+                                    <p class="card-text">
+                                        <%= drink.desc %>
+                                    </p>
+                                </div>
+
+                                <a href="/drinks/<%= drink.catagory %>/<%= drink._id %>" class="btn btn-primary">Learn more</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <% }) %>
+            </div>
+        </div>
+
+
+
+        <%- include("partials/footer")%>
