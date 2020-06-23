@@ -5,6 +5,7 @@ body {
 
 nav {
   height: 10vh;
+  width: 100%;
   padding-top: 0 !important;
   padding-bottom: 0 !important;
   background-color: #FF5C5C;
@@ -87,6 +88,10 @@ nav .navItem :hover {
   padding: 1.25rem;
 }
 
+.oneDrink {
+  width: 100vw;
+  margin: 0;
+}
 .oneDrink .drinkImage {
   height: 45vh;
 }
@@ -117,11 +122,12 @@ nav .navItem :hover {
 .oneDrink .drinkTitle {
   height: 33%;
   background-color: #FF8585;
+  align-items: center;
+  justify-content: center;
 }
 .oneDrink .drinkTitle h1 {
   text-align: center;
   width: 100%;
-  margin: auto 0;
   font-family: "Dancing Script", cursive;
   font-size: 100px;
 }
