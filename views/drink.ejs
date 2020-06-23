@@ -1,0 +1,38 @@
+<%- include("partials/header") %>
+    <%- include("partials/navbar") %>
+        <div class="row oneDrink">
+            <div class="col-4">
+                <div class="row drinkImage">
+                    <img src="<%= drink.image %>" alt="">
+                </div>
+                <div class="row drinkIngredients">
+                    <ul>
+                        <% drink.ingredients.forEach(function(ingredient){ %>
+                            <li>
+                                <%= ingredient.name %> &nbsp; &nbsp;
+                                    <%= ingredient.quantity %>
+                            </li>
+                            <% }) %>
+
+                    </ul>
+                </div>
+            </div>
+            <div class="col-8">
+                <div class="row drinkTitle">
+                    <h1>
+                        <%= drink.name %>
+                    </h1>
+                </div>
+                <div class="row drinkMethod">
+                    <ol>
+                        <% drink.method.forEach(function(method){ %>
+                            <li>
+                                <%= method %>
+                            </li>
+                            <% }) %>
+                                <li>Enjoy!</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+        <%- include("partials/footer") %>
