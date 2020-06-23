@@ -91,7 +91,7 @@ nav {
     .drinkImage {
         height: 45vh;
         img {
-            max-width: 100%;
+            min-width: 100%;
             margin: 0 auto;
             max-height: 100%;
         }
@@ -101,6 +101,7 @@ nav {
         display: flex;
         justify-content: center;
         align-items: center;
+        background-color: #f5e1e1;
         ul {
             font-family: 'Abel', sans-serif;
             list-style: none;
@@ -124,10 +125,25 @@ nav {
         height: 66%;
         ol {
             width: 65%;
-            margin: 25px auto;
+            margin: auto;
             font-family: 'Abel', sans-serif;
             font-size: 20px;
             font-weight: 400;
+        }
+    }
+}
+
+.card {
+    img,
+    .card-plus-top {
+        background-color: #FF8585;
+        height: 200px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        i {
+            font-size: 90px;
+            color: white;
         }
     }
 }
