@@ -1,6 +1,11 @@
 <%- include("partials/header") %>
     <%- include("partials/navbar") %>
         <div class="row oneDrink">
+            <div class="row drinkTitle d-md-none">
+                <h1>
+                    <%= drink.name %>
+                </h1>
+            </div>
             <div class="col-12 col-md-4">
                 <div class="row drinkImage">
                     <img src="<%= drink.image %>" alt="">
@@ -18,7 +23,7 @@
                 </div>
             </div>
             <div class="col-12 col-md-8">
-                <div class="row drinkTitle">
+                <div class="row drinkTitle d-none d-md-block">
                     <h1>
                         <%= drink.name %>
                     </h1>
