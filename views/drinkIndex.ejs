@@ -1,10 +1,10 @@
 <%- include("partials/header")%>
     <%- include("partials/navbar") %>
         <div class="container">
-            <div class="row drinkRow">
+            <div class="row align-items-center drinkRow">
                 <% drinks.forEach(function(drink){ %>
                     <div class="col-3">
-                        <div class="card">
+                        <div class="card mb-5">
                             <img src="<%= drink.image %>" class="card-img-top" alt="...">
                             <div class="card-body">
                                 <div class="card-content">

@@ -21,6 +21,7 @@ nav .navItem {
 }
 nav .navItem :hover {
   background-color: white;
+  color: #FF5C5C;
 }
 
 .square {

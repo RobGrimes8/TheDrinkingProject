@@ -64,7 +64,7 @@ app.post("/drinks", function(req, res) {
     let newName = req.body.newDrinkName;
     let newDesc = req.body.newDrinkDescription;
     let newImage = req.body.newDrinkImg;
-    let newCatagories = (req.body.newDrinkCatagories).split(" ");
+    let newCatagories = req.body.newDrinkCatagories;
     let newDifficulty = req.body.newDrinkDifficulty;
     let newIngredients = stringIntoArrayOfObjects(req.body.newDrinkIngredients);
 
@@ -72,7 +72,7 @@ app.post("/drinks", function(req, res) {
         name: newName,
         desc: newDesc,
         image: newImage,
-        catagory: newCatagories,
+        catagory: newCatagories.toLowerCase(),
         difficulty: newDifficulty,
         ingredients: newIngredients,
         method: newMethod
@@ -84,6 +84,13 @@ app.post("/drinks", function(req, res) {
 
     res.redirect("/");
 
+});
+
+app.get("/drinks", function(req, res) {
+    Recipe.find(function(err, recipes) {
+        if (err) return console.log(err);
+        res.render("drinkIndex", { drinks: recipes });
+    })
 });
 
 app.get("/drinks/:drinkCatagory", function(req, res) {
