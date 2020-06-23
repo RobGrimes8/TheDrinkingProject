@@ -108,6 +108,11 @@ nav .navItem :hover {
   font-weight: 500;
   font-size: 25px;
 }
+@media (max-width: 600px) {
+  .oneDrink .drinkIngredients {
+    font-size: 16px;
+  }
+}
 .oneDrink .drinkTitle {
   height: 33%;
   background-color: #FF8585;
@@ -118,6 +123,11 @@ nav .navItem :hover {
   margin: auto 0;
   font-family: "Dancing Script", cursive;
   font-size: 100px;
+}
+@media (max-width: 600px) {
+  .oneDrink .drinkTitle {
+    font-size: 24px;
+  }
 }
 .oneDrink .drinkMethod {
   height: 66%;
