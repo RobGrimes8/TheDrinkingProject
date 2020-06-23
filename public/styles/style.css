@@ -21,6 +21,7 @@ nav .navItem {
 }
 nav .navItem :hover {
   background-color: white;
+  color: #FF5C5C;
 }
 
 .square {
@@ -89,7 +90,7 @@ nav .navItem :hover {
   height: 45vh;
 }
 .oneDrink .drinkImage img {
-  max-width: 100%;
+  min-width: 100%;
   margin: 0 auto;
   max-height: 100%;
 }
@@ -98,6 +99,7 @@ nav .navItem :hover {
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: #f5e1e1;
 }
 .oneDrink .drinkIngredients ul {
   font-family: "Abel", sans-serif;
@@ -122,10 +124,24 @@ nav .navItem :hover {
 }
 .oneDrink .drinkMethod ol {
   width: 65%;
-  margin: 25px auto;
+  margin: auto;
   font-family: "Abel", sans-serif;
   font-size: 20px;
   font-weight: 400;
+}
+
+.card img,
+.card .card-plus-top {
+  background-color: #FF8585;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.card img i,
+.card .card-plus-top i {
+  font-size: 90px;
+  color: white;
 }
 
 /*# sourceMappingURL=style.css.map */

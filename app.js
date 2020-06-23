@@ -20,7 +20,7 @@ const recipeSchema = new mongoose.Schema({
     name: String,
     desc: String,
     image: String,
-    catagory: String,
+    catagory: [String],
     difficulty: String,
     ingredients: [{ name: String, quantity: String }],
     method: [String]
@@ -34,19 +34,7 @@ db.once('open', function() {
     // we're connected!
     console.log("Db connected")
 
-    // const newRecipe = new Recipe({
-    //     name: "Gin Fizz",
-    //     desc: "Mix a sparkling gin fizz cocktail (or two) for when you're entertaining. With just a handful of ingredients you can create a refreshing drink that evokes summer",
-    //     image: "https://www.bbcgoodfood.com/sites/default/files/styles/recipe/public/recipe/recipe-image/2018/02/gin-fizz.jpg?itok=cZqpr4H4",
-    //     catagory: "Gin",
-    //     difficulty: "Easy",
-    //     ingredients: [{ name: "Gin", quantity: "50ml" }, { name: "Lemon juice", quantity: "25ml" }, { name: "Sugar syrup", quantity: "2 tsp" }, { name: "Ice", quantity: "" }, { name: "Sparkling water", quantity: "" }, { name: "Lemon slice", quantity: "" }],
-    //     method: ["Pour the gin, lemon juice and sugar syrup in a cocktail shaker and fill up with ice cubes. Shake well until the outside of the shaker feels cold then strain into a tall glass filled with more ice and top up with sparkling water. Garnish with a lemon slice."]
-    // })
-    // newRecipe.save(function(err, recipe) {
-    //         if (err) return console.log(err);
-    //         console.log(recipe);
-    //     })
+
     // Comment.find(function(err, comments) {
     //     if (err) return console.error(err);
     //     console.log(comments);
@@ -59,6 +47,50 @@ db.once('open', function() {
 
 app.get("/", function(req, res) {
     res.render("landing");
+});
+
+app.get("/drinks/new", function(req, res) {
+    res.render("newDrink");
+});
+
+app.post("/drinks", function(req, res) {
+
+
+    let step1 = req.body.newDrinkMethod1;
+    let step2 = req.body.newDrinkMethod2;
+    let step3 = req.body.newDrinkMethod3;
+
+    let newMethod = [step1, step2, step3];
+    let newName = req.body.newDrinkName;
+    let newDesc = req.body.newDrinkDescription;
+    let newImage = req.body.newDrinkImg;
+    let newCatagories = req.body.newDrinkCatagories;
+    let newDifficulty = req.body.newDrinkDifficulty;
+    let newIngredients = stringIntoArrayOfObjects(req.body.newDrinkIngredients);
+
+    const newRecipe = new Recipe({
+        name: newName,
+        desc: newDesc,
+        image: newImage,
+        catagory: newCatagories.toLowerCase(),
+        difficulty: newDifficulty,
+        ingredients: newIngredients,
+        method: newMethod
+    })
+    newRecipe.save(function(err, recipe) {
+        if (err) return console.log(err);
+        console.log(recipe);
+    })
+
+    res.redirect("/");
+
+});
+
+app.get("/drinks", function(req, res) {
+    Recipe.find(function(err, recipes) {
+        if (err) return console.log(err);
+        res.render("drinkIndex", { drinks: recipes });
+    })
 });
 
 app.get("/drinks/:drinkCatagory", function(req, res) {
@@ -78,3 +110,17 @@ app.get("/drinks/:drinkCatagory/:drinkID", function(req, res) {
 app.listen(process.env.PORT || 3000, function() {
     console.log("server is running");
 });
+
+function stringIntoArrayOfObjects(str) {
+    let arrayOfDrinkObjects = [];
+    "Vodka,50ml-Rum,25ml-Gin,50ml"
+    let drinkArray = str.split(",");
+    ["Vodka,50ml", "Rum,25ml", "Gin,50ml"]
+    for (let i = 0; i < drinkArray.length; i++) {
+        let singleDrinkArray = drinkArray[i].split("-");
+        ["Vodka", "50ml"]
+        let singleDrinkObject = { name: singleDrinkArray[0], quantity: singleDrinkArray[1] }
+        arrayOfDrinkObjects[i] = singleDrinkObject;
+    }
+    return arrayOfDrinkObjects;
+}

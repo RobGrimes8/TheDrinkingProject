@@ -26,11 +26,13 @@
                 <div class="row drinkMethod">
                     <ol>
                         <% drink.method.forEach(function(method){ %>
-                            <li>
-                                <%= method %>
-                            </li>
-                            <% }) %>
-                                <li>Enjoy!</li>
+                            <% if(method !== ""){ %>
+                                <li>
+                                    <%= method %>
+                                </li>
+                                <% } %>
+                                    <% }) %>
+                                        <li>Enjoy!</li>
                     </ol>
                 </div>
             </div>

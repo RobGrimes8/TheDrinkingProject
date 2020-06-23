@@ -1,0 +1,74 @@
+<%- include("partials/header") %>
+    <%- include("partials/navbar") %>
+        <div class="container">
+            <form action="/drinks" method="POST">
+                <div class="form-group">
+                    <label for="newDrinkName">Cocktail name</label>
+                    <input type="text" class="form-control" name="newDrinkName" id="newDrinkName" placeholder="Cocktail name">
+                </div>
+                <div class="form-group">
+                    <label for="newDrinkDescription">A short description</label>
+                    <textarea name="newDrinkDescription" id="newDrinkDescription" class="form-control" cols="30" rows="3"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="newDrinkMethod1">Describe the method of creating the cocktail in up to 3 steps</label>
+                    <input type="text" class="form-control mb-2" name="newDrinkMethod1" id="newDrinkMethod1" placeholder="Step 1">
+                    <input type="text" class="form-control mb-2" name="newDrinkMethod2" id="newDrinkMethod2" placeholder="Step 2">
+                    <input type="text" class="form-control mb-2" name="newDrinkMethod3" id="newDrinkMethod3" placeholder="Step 3">
+                </div>
+                <div class="form-group">
+                    <label for="newDrinkImg">Image URL</label>
+                    <input type="text" class="form-control" name="newDrinkImg" id="newDrinkImg" placeholder="Image URL">
+                </div>
+                <p>Catagories</p>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" name="newDrinkCatagories" id="rumCheckbox" value="Rum">
+                    <label for="rumCheckbox">Rum</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" name="newDrinkCatagories" id="ginCheckbox" value="Gin">
+                    <label for="ginCheckbox">Gin</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" name="newDrinkCatagories" id="vodkaCheckbox" value="Vodka">
+                    <label for="vodkaCheckbox">Vodka</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" name="newDrinkCatagories" id="whiskeyCheckbox" value="Whiskey">
+                    <label for="whiskeyCheckbox">Whiskey</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" name="newDrinkCatagories" id="tequilaCheckbox" value="Tequila">
+                    <label for="tequilaCheckbox">Tequila</label>
+                </div>
+                <div class="form-group">
+                    <label for="newDrinkIngredient1">Ingredients - Seperate ingredient and quantity by a comma and each ingredient by a dash</label>
+                    <input type="text" class="form-control" name="newDrinkIngredients" id="newDrinkIngredients" placeholder="Vodka-50ml,Rum-25ml,Gin-50ml etc">
+                </div>
+
+                <p>Difficulty</p>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="newDrinkDifficulty" id="exampleRadios1" value="Easy" checked>
+                    <label class="form-check-label" for="exampleRadios1">
+                                Easy
+                            </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="newDrinkDifficulty" id="exampleRadios2" value="Medium">
+                    <label class="form-check-label" for="exampleRadios2">
+                                Medium
+                            </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="newDrinkDifficulty" id="exampleRadios3" value="Hard">
+                    <label class="form-check-label" for="exampleRadios3">
+                                Hard
+                            </label>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+
+
+        <%- include("partials/footer") %>
