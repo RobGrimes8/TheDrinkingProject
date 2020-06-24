@@ -2,7 +2,10 @@ body {
   height: 100vh !important;
   width: 100vw !important;
   background: white;
-  z-index: 1;
+}
+
+.shownCollapsedNav {
+  height: 100vh !important;
 }
 
 nav {
@@ -10,6 +13,7 @@ nav {
   height: 10vh;
   max-height: 1000px;
   transition: height 1s ease;
+  overflow: hidden;
 }
 nav .fullNav {
   height: 100%;
@@ -37,9 +41,14 @@ nav .nav-link a {
   width: 100%;
   color: white;
 }
+nav .collapsed-nav-link:nth-of-type(1),
+nav .collapsed-nav-link:nth-of-type(4),
+nav .collapsed-nav-link:nth-of-type(5) {
+  background-color: white;
+}
 nav .collapsedNav {
+  overflow-y: hidden;
   width: 100%;
-  z-index: -1;
 }
 nav .collapsedNav button {
   width: 100%;
@@ -50,17 +59,13 @@ nav .collapsedNav button {
   color: white;
 }
 nav .collapsedNav .collapsed-nav-link {
+  margin: 0;
+  padding: 0;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  margin: 5px 0;
   height: 30vh;
-}
-nav .collapsedNav .collapsed-nav-link:nth-of-type(1),
-nav .collapsedNav .collapsed-nav-link:nth-of-type(4),
-nav .collapsedNav .collapsed-nav-link:nth-of-type(5) {
-  background-color: #FF5C5C;
 }
 
 .square {
@@ -110,6 +115,7 @@ nav .collapsedNav .collapsed-nav-link:nth-of-type(5) {
 }
 .drinkRow {
   margin-top: 40px;
+  background: white;
 }
 
 .card .btn {

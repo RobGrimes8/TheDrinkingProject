@@ -2,7 +2,10 @@
         height: 100vh !important;
         width: 100vw !important;
         background: white;
-        z-index: 1;
+    }
+    
+    .shownCollapsedNav {
+        height: 100vh !important;
     }
     
     nav {
@@ -10,6 +13,7 @@
         height: 10vh;
         max-height: 1000px;
         transition: height 1s ease;
+        overflow: hidden;
         .fullNav {
             height: 100%;
         }
@@ -36,9 +40,14 @@
                 color: white;
             }
         }
+        .collapsed-nav-link:nth-of-type(1),
+        .collapsed-nav-link:nth-of-type(4),
+        .collapsed-nav-link:nth-of-type(5) {
+            background-color: white;
+        }
         .collapsedNav {
+            overflow-y: hidden;
             width: 100%;
-            z-index: -1;
             button {
                 width: 100%;
                 height: 10vh;
@@ -48,17 +57,13 @@
                 color: white;
             }
             .collapsed-nav-link {
+                margin: 0;
+                padding: 0;
                 display: flex;
                 align-items: center;
                 justify-content: center;
                 text-align: center;
-                margin: 5px 0;
                 height: 30vh;
-            }
-            .collapsed-nav-link:nth-of-type(1),
-            .collapsed-nav-link:nth-of-type(4),
-            .collapsed-nav-link:nth-of-type(5) {
-                background-color: #FF5C5C;
             }
         }
     }
@@ -110,6 +115,7 @@
     
     .drinkRow {
         margin-top: 40px;
+        background: white;
     }
     
     .card {
