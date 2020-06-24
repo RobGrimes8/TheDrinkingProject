@@ -1,29 +1,66 @@
 body {
-  height: 100vh;
-  width: 100%;
+  height: 100vh !important;
+  width: 100vw !important;
+  background: white;
+  z-index: 1;
 }
 
 nav {
-  height: 10vh;
-  width: 100%;
-  padding-top: 0 !important;
-  padding-bottom: 0 !important;
   background-color: #FF5C5C;
+  height: 10vh;
+  max-height: 1000px;
+  transition: height 1s ease;
 }
-nav .customNav {
-  width: 100%;
-  margin: 0 auto;
+nav .fullNav {
   height: 100%;
 }
-nav a {
-  color: black;
-}
-nav .navItem {
+nav .nav-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
   text-align: center;
+  height: 100%;
+  padding: 0;
 }
-nav .navItem :hover {
+nav .nav-link:hover {
   background-color: white;
+}
+nav .nav-link:hover a {
   color: #FF5C5C;
+  text-decoration: none;
+}
+nav .nav-link a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  color: white;
+}
+nav .collapsedNav {
+  width: 100%;
+  z-index: -1;
+}
+nav .collapsedNav button {
+  width: 100%;
+  height: 10vh;
+  font-size: 36px;
+  background: transparent;
+  border: none;
+  color: white;
+}
+nav .collapsedNav .collapsed-nav-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: 5px 0;
+  height: 30vh;
+}
+nav .collapsedNav .collapsed-nav-link:nth-of-type(1),
+nav .collapsedNav .collapsed-nav-link:nth-of-type(4),
+nav .collapsedNav .collapsed-nav-link:nth-of-type(5) {
+  background-color: #FF5C5C;
 }
 
 .square {
@@ -90,18 +127,19 @@ nav .navItem :hover {
 
 .oneDrink {
   width: 100vw;
+  height: 100%;
   margin: 0;
 }
 .oneDrink .drinkImage {
-  height: 45vh;
+  height: 40vh;
 }
 .oneDrink .drinkImage img {
-  min-width: 100%;
-  margin: 0 auto;
+  width: 100%;
   max-height: 100%;
+  margin: 0 auto;
 }
 .oneDrink .drinkIngredients {
-  height: 45vh;
+  height: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -120,7 +158,7 @@ nav .navItem :hover {
   }
 }
 .oneDrink .drinkTitle {
-  height: 33%;
+  height: 25vh;
   background-color: #FF8585;
   align-items: center;
   justify-content: center;
@@ -137,7 +175,7 @@ nav .navItem :hover {
   }
 }
 .oneDrink .drinkMethod {
-  height: 66%;
+  height: auto;
 }
 .oneDrink .drinkMethod ol {
   width: 65%;
@@ -159,6 +197,31 @@ nav .navItem :hover {
 .card .card-plus-top i {
   font-size: 90px;
   color: white;
+}
+
+form .btn-rg {
+  background-color: #FF5C5C;
+  width: 20vw;
+  margin-top: 25px;
+}
+
+.drinkTitleForm {
+  height: 20%;
+  background-color: #FF8585;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.drinkTitleForm h1 {
+  text-align: center;
+  width: 100%;
+  font-family: "Dancing Script", cursive;
+  font-size: 7vw;
+}
+@media (max-width: 600px) {
+  .drinkTitleForm {
+    font-size: 24px;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -1,25 +1,39 @@
-<nav class="navbar navbar-expand-lg navbar-light">
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-        <div class="row customNav justify-content-center">
+<nav>
+    <div class="collapsedNav d-lg-none">
 
-            <div class="col-2 navItem">
-                <a class="nav-link" href="/drinks/rum">Rum</a>
-            </div>
-            <div class="col-2 navItem">
-                <a class="nav-link" href="/drinks/gin">Gin</a>
-            </div>
-            <div class="col-2 navItem">
-                <a class="nav-link" href="/drinks/vodka">Vodka</a>
-            </div>
-            <div class="col-2 navItem">
-                <a class="nav-link" href="/drinks/whiskey">Whiskey</a>
-            </div>
-            <div class="col-2 navItem">
-                <a class="nav-link" href="/drinks/tequila">Tequila</a>
-            </div>
+
+        <button>
+            <span><i class="fas fa-chevron-circle-down"></i></span>
+          </button>
+
+        <div class="row justify-content-center">
+            <div class="col-6 collapsed-nav-link"><a href="/drinks/rum">Rum</a></div>
+            <div class="col-6 collapsed-nav-link"><a href="/drinks/gin">Gin</a></div>
+            <div class="col-6 collapsed-nav-link"><a href="/drinks/vodka">Vodka</a></div>
+            <div class="col-6 collapsed-nav-link"><a href="/drinks/whiskey">Whiskey</a></div>
+            <div class="col-6 collapsed-nav-link"><a href="/drinks/tequila">Tequila</a></div>
+            <div class="col-6 collapsed-nav-link"><a href="/drinks/surprise">Surprise me</a></div>
+        </div>
+
+    </div>
+
+
+    <div class="d-none d-lg-flex row justify-content-around fullNav">
+        <div class="col-2 nav-link">
+            <a href="/drinks/rum">Rum</a>
+        </div>
+        <div class="col-2 nav-link">
+            <a href="/drinks/gin">Gin</a>
+        </div>
+        <div class="col-2 nav-link">
+            <a href="/drinks/vodka">Vodka</a>
+        </div>
+        <div class="col-2 nav-link">
+            <a href="/drinks/whiskey">Whiskey</a>
+        </div>
+        <div class="col-2 nav-link">
+            <a href="/drinks/tequila">Tequila</a>
         </div>
     </div>
+
 </nav>

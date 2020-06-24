@@ -1,161 +1,224 @@
-body {
-    height: 100vh;
-    width: 100%;
-}
-
-nav {
-    height: 10vh;
-    width: 100%;
-    padding-top: 0 !important;
-    padding-bottom: 0 !important;
-    .customNav {
-        width: 100%;
-        margin: 0 auto;
-        height: 100%;
+    body {
+        height: 100vh !important;
+        width: 100vw !important;
+        background: white;
+        z-index: 1;
     }
-    a {
-        color: black;
-    }
-    background-color: #FF5C5C;
-    .navItem {
-        text-align: center;
-         :hover {
-            background-color: white;
-            color: #FF5C5C;
+    
+    nav {
+        background-color: #FF5C5C;
+        height: 10vh;
+        max-height: 1000px;
+        transition: height 1s ease;
+        .fullNav {
+            height: 100%;
+        }
+        .nav-link {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            text-align: center;
+            height: 100%;
+            padding: 0;
+            &:hover {
+                background-color: white;
+                a {
+                    color: #FF5C5C;
+                    text-decoration: none;
+                }
+            }
+            a {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 100%;
+                width: 100%;
+                color: white;
+            }
+        }
+        .collapsedNav {
+            width: 100%;
+            z-index: -1;
+            button {
+                width: 100%;
+                height: 10vh;
+                font-size: 36px;
+                background: transparent;
+                border: none;
+                color: white;
+            }
+            .collapsed-nav-link {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+                margin: 5px 0;
+                height: 30vh;
+            }
+            .collapsed-nav-link:nth-of-type(1),
+            .collapsed-nav-link:nth-of-type(4),
+            .collapsed-nav-link:nth-of-type(5) {
+                background-color: #FF5C5C;
+            }
         }
     }
-}
-
-.square {
-    height: 50vh;
-    padding: 0;
-    a {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-        height: 100%;
-        margin: 0;
+    
+    .square {
+        height: 50vh;
         padding: 0;
-        color: black;
-         :hover {
-            text-decoration: inherit;
+        a {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            color: black;
+             :hover {
+                text-decoration: inherit;
+            }
         }
-    }
-    h1 {
-        font-family: 'Dancing Script', cursive;
-        transform: rotate(-45deg);
-        font-size: 3.5rem;
-        height: fit-content;
-    }
-    @media (max-width: 600px) {
-        height: 33vh;
-        width: 50vh;
         h1 {
-            font-size: 2rem;
-        }
-    }
-}
-
-@media (min-width: 601px) {
-    .square:nth-of-type(2n) {
-        background-color: #FF5C5C;
-    }
-}
-
-@media (max-width: 600px) {
-    .square:nth-of-type(1),
-    .square:nth-of-type(4),
-    .square:nth-of-type(5) {
-        background-color: #FF5C5C;
-    }
-}
-
-.drinkRow {
-    margin-top: 40px;
-}
-
-.card {
-    .btn {
-        width: 100%;
-        border-radius: 0;
-        background-color: #FF5C5C;
-        border: none;
-    }
-    .card-body {
-        padding: 0;
-    }
-    .card-content {
-        padding: 1.25rem;
-    }
-}
-
-.oneDrink {
-    width: 100vw;
-    margin: 0;
-    .drinkImage {
-        height: 45vh;
-        img {
-            min-width: 100%;
-            margin: 0 auto;
-            max-height: 100%;
-        }
-    }
-    .drinkIngredients {
-        height: 45vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background-color: #f5e1e1;
-        ul {
-            font-family: 'Abel', sans-serif;
-            list-style: none;
-            line-height: 2.5rem;
-            font-weight: 500;
-            font-size: 25px;
+            font-family: 'Dancing Script', cursive;
+            transform: rotate(-45deg);
+            font-size: 3.5rem;
+            height: fit-content;
         }
         @media (max-width: 600px) {
-            font-size: 16px;
+            height: 33vh;
+            width: 50vh;
+            h1 {
+                font-size: 2rem;
+            }
         }
     }
-    .drinkTitle {
-        height: 33%;
+    
+    @media (min-width: 601px) {
+        .square:nth-of-type(2n) {
+            background-color: #FF5C5C;
+        }
+    }
+    
+    @media (max-width: 600px) {
+        .square:nth-of-type(1),
+        .square:nth-of-type(4),
+        .square:nth-of-type(5) {
+            background-color: #FF5C5C;
+        }
+    }
+    
+    .drinkRow {
+        margin-top: 40px;
+    }
+    
+    .card {
+        .btn {
+            width: 100%;
+            border-radius: 0;
+            background-color: #FF5C5C;
+            border: none;
+        }
+        .card-body {
+            padding: 0;
+        }
+        .card-content {
+            padding: 1.25rem;
+        }
+    }
+    
+    .oneDrink {
+        width: 100vw;
+        height: 100%;
+        margin: 0;
+        .drinkImage {
+            height: 40vh;
+            img {
+                width: 100%;
+                max-height: 100%;
+                margin: 0 auto;
+            }
+        }
+        .drinkIngredients {
+            height: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f5e1e1;
+            ul {
+                font-family: 'Abel', sans-serif;
+                list-style: none;
+                line-height: 2.5rem;
+                font-weight: 500;
+                font-size: 25px;
+            }
+            @media (max-width: 600px) {
+                font-size: 16px;
+            }
+        }
+        .drinkTitle {
+            height: 25vh;
+            background-color: #FF8585;
+            align-items: center;
+            justify-content: center;
+            h1 {
+                text-align: center;
+                width: 100%;
+                font-family: 'Dancing Script', cursive;
+                font-size: 100px;
+            }
+            @media (max-width: 600px) {
+                font-size: 24px;
+            }
+        }
+        .drinkMethod {
+            height: auto;
+            ol {
+                width: 65%;
+                margin: auto;
+                font-family: 'Abel', sans-serif;
+                font-size: 20px;
+                font-weight: 400;
+            }
+        }
+    }
+    
+    .card {
+        img,
+        .card-plus-top {
+            background-color: #FF8585;
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            i {
+                font-size: 90px;
+                color: white;
+            }
+        }
+    }
+    
+    form {
+        .btn-rg {
+            background-color: #FF5C5C;
+            width: 20vw;
+            margin-top: 25px;
+        }
+    }
+    
+    .drinkTitleForm {
+        height: 20%;
         background-color: #FF8585;
+        display: flex;
         align-items: center;
         justify-content: center;
         h1 {
             text-align: center;
             width: 100%;
             font-family: 'Dancing Script', cursive;
-            font-size: 100px;
+            font-size: 7vw;
         }
         @media (max-width: 600px) {
             font-size: 24px;
         }
     }
-    .drinkMethod {
-        height: 66%;
-        ol {
-            width: 65%;
-            margin: auto;
-            font-family: 'Abel', sans-serif;
-            font-size: 20px;
-            font-weight: 400;
-        }
-    }
-}
-
-.card {
-    img,
-    .card-plus-top {
-        background-color: #FF8585;
-        height: 200px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        i {
-            font-size: 90px;
-            color: white;
-        }
-    }
-}
