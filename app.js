@@ -24,7 +24,7 @@ const recipeSchema = new mongoose.Schema({
     difficulty: String,
     ingredients: [{ name: String, quantity: String }],
     method: [String],
-    deletable: true
+    deletable: Boolean
 });
 const Recipe = mongoose.model("Recipe", recipeSchema);
 
