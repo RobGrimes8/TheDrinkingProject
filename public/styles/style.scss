@@ -58,12 +58,12 @@ nav {
             background: transparent;
             border: none;
             color: white;
+            padding-bottom: 1px;
             i {
                 transition-duration: 1s;
             }
         }
         .collapsed-nav-link {
-            margin: 1px;
             padding: 0;
             display: flex;
             align-items: center;

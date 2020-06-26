@@ -62,12 +62,12 @@ nav .collapsedNav button {
   background: transparent;
   border: none;
   color: white;
+  padding-bottom: 1px;
 }
 nav .collapsedNav button i {
   transition-duration: 1s;
 }
 nav .collapsedNav .collapsed-nav-link {
-  margin: 1px;
   padding: 0;
   display: flex;
   align-items: center;
