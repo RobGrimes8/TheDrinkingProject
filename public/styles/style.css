@@ -67,7 +67,7 @@ nav .collapsedNav button i {
   transition-duration: 1s;
 }
 nav .collapsedNav .collapsed-nav-link {
-  margin: 0;
+  margin: 1px;
   padding: 0;
   display: flex;
   align-items: center;
