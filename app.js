@@ -23,7 +23,8 @@ const recipeSchema = new mongoose.Schema({
     catagory: [String],
     difficulty: String,
     ingredients: [{ name: String, quantity: String }],
-    method: [String]
+    method: [String],
+    deletable: true
 });
 const Recipe = mongoose.model("Recipe", recipeSchema);
 
