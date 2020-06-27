@@ -4,10 +4,12 @@ const express = require("express"),
     app = express(),
     bodyParser = require("body-parser"),
     mongoose = require('mongoose'),
+    methodOverride = require("method-override"),
     flash = require("connect-flash");
 
 app.use(express.static(__dirname + '/public'));
-app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(methodOverride("_method"));
 app.set("view engine", "ejs");
 app.use(flash());
 app.use(require("express-session")({
@@ -76,7 +78,8 @@ app.post("/drinks", function(req, res) {
         catagory: newCatagories.toLowerCase(),
         difficulty: newDifficulty,
         ingredients: newIngredients,
-        method: newMethod
+        method: newMethod,
+        deletable: true
     })
     newRecipe.save(function(err, recipe) {
         if (err) return console.log(err);
@@ -95,16 +98,32 @@ app.get("/drinks", function(req, res) {
 });
 
 app.get("/drinks/:drinkCatagory", function(req, res) {
-    Recipe.find({ catagory: req.params.drinkCatagory }, function(err, recipes) {
-        if (err) return console.log(err);
-        res.render("drinkIndex", { drinks: recipes });
-    });
+    if (req.params.drinkCatagory === "surprise") {
+        Recipe.find(function(err, drinks) {
+            if (err) return console.log(err);
+            let randomNumber = Math.floor(Math.random() * drinks.length);
+            let randomDrink = drinks[randomNumber];
+            res.render("drink", { drink: randomDrink })
+        });
+
+    } else {
+        Recipe.find({ catagory: req.params.drinkCatagory }, function(err, recipes) {
+            if (err) return console.log(err);
+            res.render("drinkIndex", { drinks: recipes });
+        });
+    }
 });
 
 app.get("/drinks/:drinkCatagory/:drinkID", function(req, res) {
     Recipe.findById(req.params.drinkID, function(err, recipe) {
         if (err) return console.log(err);
         res.render("drink", { drink: recipe })
+    });
+});
+
+app.delete("/drinks/:drinkCatagory/:drinkID", function(req, res) {
+    Recipe.findByIdAndDelete(req.params.drinkID, function(err) {
+        res.redirect("/");
     });
 });
 
