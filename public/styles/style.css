@@ -16,6 +16,7 @@ body {
 nav {
   background-color: #FF5C5C;
   height: 10vh;
+  padding-bottom: 2px;
   max-height: 1000px;
   transition: height 1s ease;
   overflow: hidden;
