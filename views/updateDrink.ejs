@@ -1,0 +1,94 @@
+<%- include("partials/header") %>
+    <%- include("partials/navbar") %>
+        <div class="drinkTitleForm">
+            <h1>
+                Edit
+                <%= drink.name %>
+            </h1>
+        </div>
+        <div class="container my-5">
+            <form name="newDrinkForm" action="/drinks/<%=drink._id%>?_method=PUT" method="POST">
+                <div class="row justify-content-around">
+                    <div class="col-5">
+                        <div class="form-group ">
+                            <label for="newDrinkName">Cocktail name</label>
+                            <input type="text" class="form-control" name="newDrinkName" id="newDrinkName" placeholder="Cocktail name" value="<%= drink.name %>">
+                        </div>
+                        <div class="form-group">
+                            <label for="newDrinkDescription">A short description</label>
+                            <textarea name="newDrinkDescription" id="newDrinkDescription" class="form-control" cols="30" rows="3"><%= drink.desc %> </textarea>
+                        </div>
+                        <div class="form-group" name="newDrinkMethod">
+                            <label for="newDrinkMethod1">Describe the method of creating the cocktail in up to 3 steps</label>
+                            <input type="text" class="form-control mb-2" name="newDrinkMethod1" id="newDrinkMethod1" placeholder="Step 1" value="<%= drink.method[0] %>">
+                            <input type="text" class="form-control mb-2" name="newDrinkMethod2" id="newDrinkMethod2" placeholder="Step 2" value="<%= drink.method[1] %>">
+                            <input type="text" class="form-control mb-2" name="newDrinkMethod3" id="newDrinkMethod3" placeholder="Step 3" value="<%= drink.method[2] %>">
+                        </div>
+                    </div>
+
+                    <div class="col-5">
+                        <div class="form-group">
+                            <label for="newDrinkImg">Image URL</label>
+                            <input type="text" class="form-control" name="newDrinkImg" id="newDrinkImg" placeholder="Image URL" value="<%= drink.image %>">
+                        </div>
+                        <div class="form-group">
+                            <p class="mb-1">Catagories</p>
+                            <div class="form-check form-check-inline">
+                                <% let rumIfChecked = drink.catagory.includes("rum") ? "checked" : "" %>
+                                    <input class="form-check-input" type="checkbox" name="newDrinkCatagories" id="rumCheckbox" value="Rum" <%=rumIfChecked%>>
+                                    <label class="form-check-label" for="rumCheckbox">Rum</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <% let ginIfChecked = drink.catagory.includes("gin") ? "checked" : "" %>
+                                    <input class="form-check-input" type="checkbox" name="newDrinkCatagories" id="ginCheckbox" value="Gin" <%=ginIfChecked%>>
+                                    <label class="form-check-label" for="ginCheckbox">Gin</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <% let vodkaIfChecked = drink.catagory.includes("vodka") ? "checked" : "" %>
+                                    <input class="form-check-input" type="checkbox" name="newDrinkCatagories" id="vodkaCheckbox" value="Vodka" <%=vodkaIfChecked%>>
+                                    <label class="form-check-label" for="vodkaCheckbox">Vodka</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <% let whiskeyIfChecked = drink.catagory.includes("whiskey") ? "checked" : "" %>
+                                    <input class="form-check-input" type="checkbox" name="newDrinkCatagories" id="whiskeyCheckbox" value="Whiskey" <%=whiskeyIfChecked%>>
+                                    <label class="form-check-label" for="whiskeyCheckbox">Whiskey</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <% let tequilaIfChecked = drink.catagory.includes("tequila") ? "checked" : "" %>
+                                    <input class="form-check-input" type="checkbox" name="newDrinkCatagories" id="tequilaCheckbox" value="Tequila" <%=tequilaIfChecked%>>
+                                    <label class="form-check-label" for="tequilaCheckbox">Tequila</label>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="newDrinkIngredient1">Ingredients - Seperate ingredient and quantity by a comma and each ingredient by a dash</label>
+                            <input type="text" class="form-control" name="newDrinkIngredients" id="newDrinkIngredients" value="<%=drink.rawIngredients%>">
+                        </div>
+
+
+                        <p class="mb-1">Difficulty</p>
+                        <div class="form-check">
+                            <% let easyRadioCheck = drink.difficulty == "Easy" ? "checked" : "" %>
+                                <input class="form-check-input" type="radio" name="newDrinkDifficulty" id="exampleRadios1" value="Easy" <%=easyRadioCheck%>>
+                                <label class="form-check-label" for="exampleRadios1">Easy</label>
+                        </div>
+                        <div class="form-check">
+                            <% let mediumRadioCheck = drink.difficulty == "Medium" ? "checked" : "" %>
+                                <input class="form-check-input" type="radio" name="newDrinkDifficulty" id="exampleRadios2" value="Medium" <%=mediumRadioCheck%>>
+                                <label class="form-check-label" for="exampleRadios2">Medium</label>
+                        </div>
+                        <div class="form-check">
+                            <% let hardRadioCheck = drink.difficulty == "Hard" ? "checked" : "" %>
+                                <input class="form-check-input" type="radio" name="newDrinkDifficulty" id="exampleRadios3" value="Hard" <%=hardRadioCheck%>>
+                                <label class="form-check-label" for="exampleRadios3">Hard</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row justify-content-around">
+                    <button type="submit" class="btn btn-rg">Submit</button>
+                </div>
+            </form>
+        </div>
+
+
+        <%- include("partials/footer") %>

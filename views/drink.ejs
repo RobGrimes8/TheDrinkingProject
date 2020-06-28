@@ -43,10 +43,10 @@
                 <% if(drink.deletable){ %>
                     <div class="row editDeleteDrink">
                         <div class="col-md-6 updateButton">
-                            <button type="button" class="btn btn-warning">Edit</button>
+                            <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#updateModal">Edit</button>
                         </div>
                         <div class="col-md-6 deleteButton">
-                            <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#updateModal">Delete</button>
+                            <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteModal">Delete</button>
                         </div>
                     </div>
                     <% } %>
@@ -54,9 +54,29 @@
             </div>
         </div>
 
-        <!-- Modal HTML -->
-
+        <!-- === Modal HTML === -->
         <div class="modal" id="updateModal" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Edit
+                            <%= drink.name %>?</h5>
+
+                    </div>
+                    <div class="modal-body">
+                        <p>Are you sure you want to change this masterpiece?</p>
+                    </div>
+                    <div class="modal-footer">
+                        <a href="" data-dismiss="modal" aria-label="Close">Of course not</a>
+                        <form class="deleteForm" action="/drinks/<%= drink.catagory %>/<%= drink._id %>/edit" method=GET>
+                            <button class="btn btn-danger">Edit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal" id="deleteModal" tabindex="-1" role="dialog">
             <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
                     <div class="modal-header">

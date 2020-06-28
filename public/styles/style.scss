@@ -250,6 +250,9 @@ nav {
 }
 
 form {
+    .form-group {
+        margin-bottom: 25px;
+    }
     .btn-rg {
         background-color: #FF5C5C;
         width: 20vw;
@@ -319,4 +322,14 @@ form {
             }
         }
     }
+}
+
+input.invalid,
+textarea.invalid {
+    border: 1px solid red !important;
+}
+
+em.invalid {
+    color: red;
+    font-size: 0.8rem;
 }

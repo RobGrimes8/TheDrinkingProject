@@ -264,6 +264,9 @@ nav .collapsedNav .collapsed-nav-link a {
   color: white;
 }
 
+form .form-group {
+  margin-bottom: 25px;
+}
 form .btn-rg {
   background-color: #FF5C5C;
   width: 20vw;
@@ -332,6 +335,16 @@ form .btn-rg {
   background-color: white;
   color: #FF5C5C;
   text-decoration: none;
+}
+
+input.invalid,
+textarea.invalid {
+  border: 1px solid red !important;
+}
+
+em.invalid {
+  color: red;
+  font-size: 0.8rem;
 }
 
 /*# sourceMappingURL=style.css.map */
