@@ -140,11 +140,19 @@ app.put("/drinks/:drinkID", function(req, res) {
     let rawIngredients = req.body.newDrinkIngredients;
     let newIngredients = stringIntoArrayOfObjects(rawIngredients);
 
+    if (Array.isArray(newCatagories)) {
+        newCatagories = newCatagories.map(v => v.toLowerCase());
+    } else {
+        newCatagories = newCatagories.toLowerCase();
+    }
+
+
+
     const recipe = {
         name: newName,
         desc: newDesc,
         image: newImage,
-        catagory: newCatagories.toLowerCase(),
+        catagory: newCatagories,
         difficulty: newDifficulty,
         rawIngredients: rawIngredients,
         ingredients: newIngredients,
