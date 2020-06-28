@@ -21,6 +21,7 @@ nav {
         height: 100%;
     }
     .nav-link {
+        transition: color .1s ease-in-out, background-color .15s ease-in-out;
         display: flex;
         align-items: center;
         justify-content: space-around;
@@ -230,6 +231,22 @@ nav {
             height: 100%;
             width: 100%;
             border-radius: 0;
+        }
+    }
+    .btn-edit {
+        background-color: #FF8585;
+        color: white;
+        &:hover {
+            background-color: #fff;
+            color: #FF8585;
+        }
+    }
+    .btn-delete {
+        background-color: #FF5C5C;
+        color: white;
+        &:hover {
+            background-color: #fff;
+            color: #FF5C5C;
         }
     }
 }
