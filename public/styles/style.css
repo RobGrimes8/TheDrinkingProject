@@ -202,7 +202,7 @@ nav .collapsedNav .collapsed-nav-link a {
   background-color: #FF8585;
   align-items: center;
   justify-content: center;
-  height: 10vh;
+  height: auto;
 }
 @media (min-width: 768px) {
   .oneDrink .drinkTitle {
