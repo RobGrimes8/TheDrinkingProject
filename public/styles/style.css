@@ -105,7 +105,7 @@ nav .collapsedNav .collapsed-nav-link a {
   font-size: 3.5rem;
   height: fit-content;
 }
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   .square {
     height: 33vh;
     width: 50vh;
@@ -115,12 +115,12 @@ nav .collapsedNav .collapsed-nav-link a {
   }
 }
 
-@media (min-width: 601px) {
+@media (min-width: 768px) {
   .square:nth-of-type(2n) {
     background-color: #FF5C5C;
   }
 }
-@media (max-width: 600px) {
+@media (max-width: 767px) {
   .square:nth-of-type(1),
 .square:nth-of-type(4),
 .square:nth-of-type(5) {
@@ -192,7 +192,7 @@ nav .collapsedNav .collapsed-nav-link a {
   font-weight: 500;
   font-size: 25px;
 }
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   .oneDrink .drinkIngredients {
     font-size: 16px;
   }
@@ -285,12 +285,7 @@ form .btn-rg {
   text-align: center;
   width: 100%;
   font-family: "Dancing Script", cursive;
-  font-size: 7vw;
-}
-@media (max-width: 600px) {
-  .drinkTitleForm {
-    font-size: 24px;
-  }
+  font-size: 8vw;
 }
 
 .modal .modal-footer {

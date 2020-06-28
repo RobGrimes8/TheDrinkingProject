@@ -102,7 +102,7 @@ nav {
         font-size: 3.5rem;
         height: fit-content;
     }
-    @media (max-width: 600px) {
+    @media (max-width: 768px) {
         height: 33vh;
         width: 50vh;
         h1 {
@@ -111,13 +111,13 @@ nav {
     }
 }
 
-@media (min-width: 601px) {
+@media (min-width: 768px) {
     .square:nth-of-type(2n) {
         background-color: #FF5C5C;
     }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 767px) {
     .square:nth-of-type(1),
     .square:nth-of-type(4),
     .square:nth-of-type(5) {
@@ -182,7 +182,7 @@ nav {
             font-weight: 500;
             font-size: 25px;
         }
-        @media (max-width: 600px) {
+        @media (max-width: 768px) {
             font-size: 16px;
         }
     }
@@ -271,10 +271,7 @@ form {
         text-align: center;
         width: 100%;
         font-family: 'Dancing Script', cursive;
-        font-size: 7vw;
-    }
-    @media (max-width: 600px) {
-        font-size: 24px;
+        font-size: 8vw;
     }
 }
 
